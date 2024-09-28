@@ -1,0 +1,25 @@
+services:
+  spark-master:
+    image: bitnami/spark:latest
+    environment:
+      - SPARK_MASTER_HOST=spark-master
+      - SPARK_MODE=master
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+    volumes:
+      - spark-master-data:/bitnami/spark
+
+  spark-worker:
+    image: bitnami/spark:latest
+    environment:
+      - SPARK_MASTER_URL=spark://spark-master:7077
+      - SPARK_MODE=worker
+    depends_on:
+      - spark-master
+    volumes:
+      - spark-worker-data:/bitnami/spark
+
+volumes:
+  spark-master-data:
+  spark-worker-data:
