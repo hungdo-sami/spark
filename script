@@ -5,3 +5,5 @@ cd metabase
 chmod +x install_docker.sh
 ./install_docker.sh
 docker swarm init --advertise-addr 10.160.0.13
+-------------------------------------------------
+docker stack deploy -c docker-compose.yml spark-cluster
