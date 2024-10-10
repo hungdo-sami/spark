@@ -4,3 +4,4 @@ git clone https://github.com/hungdo-sami/metabase.git
 cd metabase
 chmod +x install_docker.sh
 ./install_docker.sh
+docker swarm init --advertise-addr 10.160.0.13
