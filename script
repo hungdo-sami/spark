@@ -6,6 +6,6 @@ chmod +x install_docker.sh
 ./install_docker.sh
 docker swarm init --advertise-addr 10.160.0.13
 -------------------------------------------------
-docker network create --driver overlay spark-network
+#docker network create --driver overlay spark-network
 sudo docker network create --driver overlay --attachable spark-network
 docker stack deploy -c docker-compose.yml spark-cluster
