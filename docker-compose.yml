@@ -24,7 +24,7 @@ services:
   spark-worker:
     image: bitnami/spark:latest
     deploy:
-      replicas: 3
+      replicas: 2
       placement:
         constraints:
           - node.role == worker
